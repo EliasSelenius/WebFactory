@@ -16,9 +16,15 @@ namespace WebDemo.Controllers {
         public ActionResult Test() {
             Page page = new Page("My testing Page");
 
-            page.InitTag();
+            page.InitTag(new TestComp());
 
             return Content(page.Render());
+        }
+    }
+
+    public class TestComp : BaseComponent {
+        protected override string Draw() {
+            return "<p>SomeText</p>";
         }
     }
 }

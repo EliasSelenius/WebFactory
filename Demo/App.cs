@@ -12,7 +12,9 @@ namespace Demo {
         static void Main() {
             Page page = new Page("My WebFactory App");
 
-            page.InitTag(new MyComp());
+            page.InitTag(new MyComp(), new MyComp());
+
+            page.InitTag();
 
             Console.WriteLine(page.Render().ToString());
 

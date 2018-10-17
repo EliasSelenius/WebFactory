@@ -1,4 +1,7 @@
-﻿@{
+﻿
+@using WebFactory.Framework;
+
+@{
     ViewBag.Title = "Home Page";
     Layout = null;
 }
@@ -13,26 +16,19 @@
 
     @*@WebFactory.Css.Grid(10, 10)*@
 
-
+    @{
+        Tag tag = new Tag("fajowiejfmp");
+        tag.AddComponent(new WebDemo.Controllers.TestComp());
+        Html.Raw(tag.Render());
+    }
 
 </head>
 <body>
-    <h2>ass</h2>
-
-    <div>
-        <h2>Hello World</h2>
-        <div id="mycomp">
-            <h2 id="emp">Heu</h2>
-            <style scoped>
-                h2 {
-                    color: rebeccapurple;
-                }
-            </style>
-        </div>
-    </div>
 
 </body>
 </html>
 
 @functions {
+
+
 }
