@@ -24,7 +24,7 @@ namespace WebFactory {
                                       $"background-color: rgb({color.R}, {color.G}, {color.B});" +
                                       $"position: absolute;\"></div>";
 
-            return new System.Web.HtmlString(res);
+            return new HtmlString(res);
         }
     }
 }

@@ -10,33 +10,29 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    <style>
-        html, body {
-            height: 100%;
-        }
 
-        div {
-        }
-    </style>
+    @*@WebFactory.Css.Grid(10, 10)*@
+
+
+
 </head>
 <body>
+    <h2>ass</h2>
 
-    @{
-        WebFactory.Html.Fill(System.Drawing.Color.FromArgb(255, 255, 0, 255));
-    }
-
-    @WebFactory.Html.Rect(10, 10, 80, 80)
-
-    @{
-        WebFactory.Html.Fill(System.Drawing.Color.FromArgb(1, 0, 0, 255));
-    }
-
-    @WebFactory.Html.Rect(80, 80, 100, 80)
-    @WebFactory.Html.Rect(100, 400, 100, 80)
-    @WebFactory.Html.Rect(80, 500, 300, 80)
-
-
-    @*<div style="transform: translate(50vw, 50vh); width: 100px; height: 100px; background-color: green;"></div>*@
+    <div>
+        <h2>Hello World</h2>
+        <div id="mycomp">
+            <h2 id="emp">Heu</h2>
+            <style scoped>
+                h2 {
+                    color: rebeccapurple;
+                }
+            </style>
+        </div>
+    </div>
 
 </body>
 </html>
+
+@functions {
+}
