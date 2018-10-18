@@ -22,11 +22,11 @@ namespace WebFactory.Framework {
         }
 
         public string Render() {
-            string res = $"<template id=\"{Id}\">";
+            string res = $"<div id=\"{Id}\">";
             foreach (BaseComponent comp in Components) {
                 res += comp.Render();
             }
-            res += "</template>";
+            res += "</div>";
             return res;
         }
 

@@ -34,12 +34,15 @@ namespace WebFactory {
         }
 
 
-        public static string ApplyId(string id, string css) {
+        //TODO: is there an instance where this doesent work? is there an easyer way to do this?
+        public static string ApplyId(string idToApply, string css) {
+            string id = " #" + idToApply + " ";
             string res = css;
             for (int i = 0; i < css.Length; i++) {
                 char c = res[i];
                 if (c.Equals('}')) {
-                    res = res.Insert(i, id);
+                    res = res.Insert(i + 1, id);
+                    i += id.Length;
                 }
             }
             

@@ -20,7 +20,7 @@ namespace WebFactory.Framework {
         }
 
         public void InitTag(params BaseComponent[] comps) {
-            Tag tag = new Tag(Path.GetRandomFileName().Replace(".", ""));
+            Tag tag = new Tag("id" + Path.GetRandomFileName().Replace(".", ""));
             tag.AddComponents(comps);
             tags.Add(tag);
         }

@@ -18,6 +18,17 @@ namespace Demo {
 
             Console.WriteLine(page.Render().ToString());
 
+            Console.WriteLine();
+
+            string css =
+                "h1 { color: red; }" +
+                "div { background-color: green; }";
+
+
+
+            Console.WriteLine(WebFactory.Css.ApplyId("Container", css));
+
+
             Console.Read();
         }
     }

@@ -43,12 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Framework\Components\Animations\CssAnimation.cs" />
     <Compile Include="Framework\Components\BaseComponent.cs" />
     <Compile Include="Css.cs" />
+    <Compile Include="Framework\Components\Standard\Transform3D.cs" />
     <Compile Include="Framework\Page.cs" />
     <Compile Include="Framework\Tag.cs" />
     <Compile Include="Html.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
