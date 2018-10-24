@@ -10,6 +10,12 @@ using WebFactory.Framework.Components;
 namespace Demo {
     class App {
         static void Main() {
+
+
+            Console.WriteLine(WebFactory.Css.Grid(4, 4));
+
+            Console.Read();
+
             Page page = new Page("My WebFactory App");
 
             page.InitTag(new MyComp(), new MyComp());
