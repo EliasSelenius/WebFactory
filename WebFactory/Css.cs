@@ -95,11 +95,15 @@ namespace WebFactory {
             }
         }
 
-        public static class Attributes {
+        public static class Attribute {
             public static string Transform(Nums.Transform t, Units unit) {
                 string u = EvaluateUnit(unit);
-                return $"transform: translate3d({t.Position.x + u}, {t.Position.y + u}, {t.Position.z + u});";
+                var r = t.Rotation.AxisAngle;
+                return $"transform: translate3d({t.Position.x + u}, {t.Position.y + u}, {t.Position.z + u}) " +
+                    $"rotate3d({r.x},{r.y},{r.z},{r.w}rad) " +
+                    $"scale3d{t.Scale.ToString()};";
             }
+
         }
 
 

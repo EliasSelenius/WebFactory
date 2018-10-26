@@ -12,7 +12,7 @@ namespace Demo {
         static void Main() {
 
 
-            Console.WriteLine(WebFactory.Css.Attributes.Transform(new Nums.Transform(), WebFactory.Css.Units.Percent));
+            Console.WriteLine(WebFactory.Css.Attribute.Transform(new Nums.Transform(), WebFactory.Css.Units.Percent));
 
             Console.Read();
 

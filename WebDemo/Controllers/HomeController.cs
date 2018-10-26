@@ -38,16 +38,22 @@ namespace WebDemo.Controllers {
             text = t;
         }
 
+        
+
         protected override string Draw() {
 
             var t = new Nums.Transform();
 
-            t.Position.Set(100, 400, 700);
+            t.Position.Set(100, 400, 0);
+            t.Rotate(0, new Random().Next(-80, 80), 0);
+            t.Scale = Nums.Vec3.One * 100;
 
             return $"<p>{text}</p>" +
-                "<style> div {" +
-                $"{ Css.Attributes.Transform(t, Css.Units.Pixels) }" +
-                "} </style>";
+                "<style> " + $"#{tag.Id}" + "{" +
+                $"{ Css.Attribute.Transform(t, Css.Units.Pixels) } " +
+                $"text-align: center;" +
+                "}" +
+                "</style>";
         }
     }
 }
