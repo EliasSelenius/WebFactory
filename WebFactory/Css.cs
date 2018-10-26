@@ -73,35 +73,34 @@ namespace WebFactory {
             return res;
         }
 
-        public enum Units {
-            Percent,
-            Pixels,
-            Degrees,
-            Radians
+
+        private static string FormatNumber(float num, string unit = "") {
+            return (num + unit).Replace(",", ".");
         }
 
-        private static string EvaluateUnit(Units unit) {
-            switch (unit) {
-                case Units.Percent:
-                    return "%";
-                case Units.Pixels:
-                    return "px";
-                case Units.Degrees:
-                    return "deg";
-                case Units.Radians:
-                    return "rad";
-                default:
-                    return "px";
-            }
+
+        public static class Units {
+            public const string Percent = "%";
+            public const string Pixels = "px";
+
+            public const string Degrees = "deg";
+            public const string Radians = "rad";
         }
 
         public static class Attribute {
-            public static string Transform(Nums.Transform t, Units unit) {
-                string u = EvaluateUnit(unit);
+            public static string Transform(Nums.Transform t) {
                 var r = t.Rotation.AxisAngle;
-                return $"transform: translate3d({t.Position.x + u}, {t.Position.y + u}, {t.Position.z + u}) " +
-                    $"rotate3d({r.x},{r.y},{r.z},{r.w}rad) " +
-                    $"scale3d{t.Scale.ToString()};";
+                return $"transform: " +
+                    $"translate3d({FormatNumber(t.Position.x, Units.Pixels)}, " +
+                                $"{FormatNumber(t.Position.y, Units.Pixels)}, " +
+                                $"{FormatNumber(t.Position.z, Units.Pixels)}) " +
+                    $"rotate3d({FormatNumber(r.x)}, " +
+                             $"{FormatNumber(r.y)}, " +
+                             $"{FormatNumber(r.z)}, " +
+                             $"{FormatNumber(r.w, Units.Radians)}) " +
+                    $"scale3d({FormatNumber(t.Scale.x)}, " +
+                            $"{FormatNumber(t.Scale.y)}, " +
+                            $"{FormatNumber(t.Scale.z)});";
             }
 
         }
