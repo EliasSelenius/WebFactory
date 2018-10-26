@@ -7,7 +7,11 @@ using System.Threading.Tasks;
 using System.Web;
 
 namespace WebFactory {
+    
     public static class Css {
+
+        
+
 
         public static string Grid(int cols, int rows) {
             string content = @"html, body { height: 100%; margin: 0; }";
@@ -68,5 +72,42 @@ namespace WebFactory {
             
             return res;
         }
+
+        public enum Units {
+            Percent,
+            Pixels,
+            Degrees,
+            Radians
+        }
+
+        private static string EvaluateUnit(Units unit) {
+            switch (unit) {
+                case Units.Percent:
+                    return "%";
+                case Units.Pixels:
+                    return "px";
+                case Units.Degrees:
+                    return "deg";
+                case Units.Radians:
+                    return "rad";
+                default:
+                    return "px";
+            }
+        }
+
+        public static class Attributes {
+            public static string Transform(Nums.Transform t, Units unit) {
+                string u = EvaluateUnit(unit);
+                return $"transform: translate3d({t.Position.x + u}, {t.Position.y + u}, {t.Position.z + u});";
+            }
+        }
+
+
+        public static class Animation {
+            public static string KeyFrames(string name, Animations.Animation anim) {
+                return null;
+            }
+        }
+
     }
 }

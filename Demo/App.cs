@@ -12,6 +12,19 @@ namespace Demo {
         static void Main() {
 
 
+            Console.WriteLine(WebFactory.Css.Attributes.Transform(new Nums.Transform(), WebFactory.Css.Units.Percent));
+
+            Console.Read();
+
+            var anim = new WebFactory.Animations.AnimationCurve();
+            anim.Set(0, 1);
+            anim.Set(1, 0.5f);
+            anim.Set(.5f, 1);
+            Console.WriteLine(anim);
+
+            Console.Read();
+
+
             Console.WriteLine(WebFactory.Css.Grid(4, 4));
 
             Console.Read();

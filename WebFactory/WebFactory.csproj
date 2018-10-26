@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Nums">
+      <HintPath>..\..\Nums\bin\Debug\Nums.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -43,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Animations\Animation.cs" />
+    <Compile Include="Animations\AnimationCurve.cs" />
+    <Compile Include="Animations\KeyFrame.cs" />
     <Compile Include="Framework\Components\Animations\CssAnimation.cs" />
     <Compile Include="Framework\Components\BaseComponent.cs" />
     <Compile Include="Css.cs" />

@@ -16,19 +16,24 @@
 
     @*@WebFactory.Css.Grid(10, 10)*@
 
-    @{
-        Tag tag = new Tag("fajowiejfmp");
-        tag.AddComponent(new WebDemo.Controllers.TestComp());
-        Html.Raw(tag.Render());
-    }
+
 
 </head>
 <body>
+    
+    @myTag()
 
+    tes
 </body>
 </html>
 
 @functions {
 
+    static Tag tag = new Tag("fajowiejfmp");
+
+    public static IHtmlString myTag() {
+        tag.AddComponent(new WebDemo.Controllers.Text("Hello"));
+        return new HtmlString(tag.Render());
+    }
 
 }
