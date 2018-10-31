@@ -50,7 +50,7 @@ namespace WebDemo.Controllers {
 
             return $"<p>{text}</p>" +
                 "<style> " + $"#{tag.Id}" + "{" +
-                $"{ Css.Attribute.Transform(t, Css.Units.Pixels) } " +
+                $"{ Css.Attribute.Transform(t) } " +
                 $"text-align: center;" +
                 "}" +
                 "</style>";

@@ -28,7 +28,7 @@ namespace WebFactory {
                     content += $".col-{i},";
                 }
                 content = content.Remove(content.Length - 1);
-                content += @"{ float: left; box-sizing: border-box; }";
+                content += @"{ float: left; box-sizing: border-box; position: relative; }";
             }
             
             // init rows:
@@ -43,16 +43,16 @@ namespace WebFactory {
                     content += $".row-{i},";
                 }
                 content = content.Remove(content.Length - 1);
-                content += @"{ box-sizing: border-box; }";
+                content += @"{ box-sizing: border-box; position: relative; }";
             }
             
 
 
             // helper classes:
-            content += @".col-max { width: 100%; }";
-            content += @".col-half { width: 50%; }";
-            content += @".row-max { height: 100%; }";
-            content += @".row-half { height: 50%; }";
+            content += @".col-max { width: 100%; position: relative; }";
+            content += @".col-half { width: 50%; position: relative; }";
+            content += @".row-max { height: 100%; position: relative; }";
+            content += @".row-half { height: 50%; position: relative; }";
 
             return content;
         }
