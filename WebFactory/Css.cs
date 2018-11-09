@@ -18,7 +18,8 @@ namespace WebFactory {
 
             // init collumns:
             for (int c = 1; c <= cols; c++) {
-                string tmp = $".col-{c}" + "{ \n width: " + ((100f / cols) * c).ToString() + "%; \n } \n";
+                string tmp = $".col-{c}" + "{ \n width: " + ((100f / cols) * c).ToString() + "%; \n } \n" +
+                             $".col-{c}-half " + "{ width: " + (((100f / cols) * c) / 2f).ToString() + "%; } \n";
                 content += tmp.Replace(',', '.');
             }
 
@@ -33,7 +34,8 @@ namespace WebFactory {
             
             // init rows:
             for (int r = 1; r <= rows; r++) {
-                string tmp = $".row-{r}" + "{ \n height: " + ((100f / rows) * r).ToString() + "%; \n } \n";
+                string tmp = $".row-{r}" + "{ \n height: " + ((100f / rows) * r).ToString() + "%; \n } \n" +
+                             $".row-{r}-half" + "{ height: " + (((100f / rows) * r) / 2f).ToString() + "%; } \n";
                 content += tmp.Replace(',', '.');
             }
 

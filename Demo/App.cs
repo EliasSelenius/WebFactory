@@ -15,6 +15,7 @@ namespace Demo {
             Console.WriteLine(WebFactory.Css.Attribute.Transform(new Nums.Transform()));
 
             Console.Read();
+            Console.Clear();
 
             var anim = new WebFactory.Animations.AnimationCurve();
             anim.Set(0, 1);
@@ -23,11 +24,12 @@ namespace Demo {
             Console.WriteLine(anim);
 
             Console.Read();
-
+            Console.Clear();
 
             Console.WriteLine(WebFactory.Css.Grid(4, 4));
 
             Console.Read();
+            Console.Clear();
 
             Page page = new Page("My WebFactory App");
 
