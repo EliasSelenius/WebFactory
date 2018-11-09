@@ -26,7 +26,7 @@ namespace WebFactory {
             // for every collumn:
             if (cols != 0) {
                 for (int i = 1; i <= cols; i++) {
-                    content += $".col-{i},";
+                    content += $".col-{i}, .col-{i}-half,";
                 }
                 content = content.Remove(content.Length - 1);
                 content += @"{ float: left; box-sizing: border-box; position: relative; }";
@@ -42,7 +42,7 @@ namespace WebFactory {
             // for every row:
             if (rows != 0) {
                 for (int i = 1; i <= rows; i++) {
-                    content += $".row-{i},";
+                    content += $".row-{i}, .row-{i}-half,";
                 }
                 content = content.Remove(content.Length - 1);
                 content += @"{ box-sizing: border-box; position: relative; }";
